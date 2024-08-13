@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutteranimation/core/colors/colors.dart';
 import 'package:flutteranimation/core/utils/custom_textfild.dart';
 import 'package:flutteranimation/module/auth/controller/auth_controller.dart';
@@ -31,34 +32,39 @@ class FormWidget extends StatelessWidget {
           print("Matha 2");
           return Form(
             key: _formKey,
-            child: Column(
-              children: [
-                _textFilds(context, controller),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Forgot Password",
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: blueColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6), // <-- Radius
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _textFilds(context, controller),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Forgot Password",
+                        style: TextStyle(color: blueColor),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: blueColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6), // <-- Radius
+                      ),
+                      minimumSize: const Size(200, 40),
                     ),
-                    // minimumSize: const Size(200, 40),
+                    child: Text(
+                      "Login".toUpperCase(),
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
-                  child: Text(
-                    "Login".toUpperCase(),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }));

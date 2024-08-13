@@ -15,7 +15,7 @@ class AuthScreen extends StatelessWidget {
       backgroundColor: blueColor,
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [_headLine(context), Expanded(child: FormWidget())],
       ),
     ));
@@ -23,17 +23,20 @@ class AuthScreen extends StatelessWidget {
 
   Widget _headLine(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 50, bottom: 30),
+      // color: ,
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 50, bottom: 50),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Login",
+            style: TextStyle(
+                fontSize: 32, color: Colors.white, fontWeight: FontWeight.w600),
           ),
           Text(
             "Enter a beautiful world",
+            style: TextStyle(fontSize: 14, color: Colors.white),
           ),
         ],
       ),
